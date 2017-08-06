@@ -14,6 +14,6 @@ public class TimeHelper {
         int hourHelp = calendar.get(Calendar.HOUR);
         int minuteHelp = calendar.get(Calendar.MINUTE);
         int secondHelp = calendar.get(Calendar.SECOND);
-        return String.valueOf(hourHelp+":"+minuteHelp+":"+secondHelp);
+        return String.valueOf("Current time: "+hourHelp+":"+minuteHelp+":"+secondHelp);
     }
 }

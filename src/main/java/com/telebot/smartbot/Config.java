@@ -9,7 +9,7 @@ public class Config {
     private String botName;
 
     public String getBotToken() {
-        return "";
+        return "381128752:AAFOkq01lIiZrjbWUW_K0AgVslfVTPcRwik";
     }
 
     public void setBotToken(String botToken) {

@@ -46,7 +46,7 @@ public class Bot extends TelegramLongPollingBot{
             else if (message.getText().equals("How are you?")){
                 sendNewMessage(message, "I am fine! Thank you!");
             }
-            else if (message.getText().equals("What time is it now?")) {
+            else if (message.getText().equals("/time")) {
                 sendNewMessage(message, timeHelper.getTimeDate());
             }
             else sendNewMessage(message, "I'am sinking, wait just a second");
