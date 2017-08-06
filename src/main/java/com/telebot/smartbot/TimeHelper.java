@@ -4,9 +4,8 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.TimeZone;
 
-import static com.sun.org.apache.xerces.internal.impl.xpath.regex.CaseInsensitiveMap.get;
-
 /**
+ * @author Gagauz Sergey
  * Created by user on 07.08.2017.
  */
 public class TimeHelper {

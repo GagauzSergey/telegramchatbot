@@ -1,6 +1,7 @@
 package com.telebot.smartbot;
 
 /**
+ * @author Gagauz Sergey
  * Created by user on 06.08.2017.
  */
 public class Config {
