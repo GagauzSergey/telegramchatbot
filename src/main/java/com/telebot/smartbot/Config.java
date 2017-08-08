@@ -2,14 +2,14 @@ package com.telebot.smartbot;
 
 /**
  * @author Gagauz Sergey
- * Created by user on 06.08.2017.
+ *         Created by user on 06.08.2017.
  */
 public class Config {
     private String botToken;
     private String botName;
 
     public String getBotToken() {
-        return "";
+        return "381128752:AAFOkq01lIiZrjbWUW_K0AgVslfVTPcRwik";
     }
 
     public void setBotToken(String botToken) {
