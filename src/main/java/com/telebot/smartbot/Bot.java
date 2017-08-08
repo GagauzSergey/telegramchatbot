@@ -1,5 +1,9 @@
 package com.telebot.smartbot;
 
+import org.apache.http.HttpRequest;
+import org.apache.http.HttpRequestFactory;
+import org.apache.http.MethodNotSupportedException;
+import org.apache.http.RequestLine;
 import org.telegram.telegrambots.ApiContextInitializer;
 import org.telegram.telegrambots.TelegramBotsApi;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
@@ -38,6 +42,7 @@ public class Bot extends TelegramLongPollingBot{
 
     public void onUpdateReceived(Update update) {
         Message message = update.getMessage();
+        JsonCurrencyParser jsonCurrencyParser = new JsonCurrencyParser();
         if (message!=null && message.hasText()){
             if (message.getText().equals("/help")){
                 sendNewMessage(message, "Hello, wats up");
@@ -48,6 +53,9 @@ public class Bot extends TelegramLongPollingBot{
             }
             else if (message.getText().equals("/time")) {
                 sendNewMessage(message, timeHelper.getTimeDate());
+            }
+            else if (message.getText().equals("/currency")) {
+                sendNewMessage(message, jsonCurrencyParser.getInfoFromJson());
             }
             else sendNewMessage(message, "I'am sinking, wait just a second");
         }
