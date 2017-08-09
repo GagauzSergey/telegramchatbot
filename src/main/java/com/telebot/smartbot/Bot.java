@@ -13,6 +13,8 @@ import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.exceptions.TelegramApiException;
 import org.telegram.telegrambots.exceptions.TelegramApiRequestException;
 
+import java.util.HashMap;
+
 /**
  * @author Sergey Gagauz
  *         Created by user on 06.08.2017.
@@ -21,6 +23,7 @@ import org.telegram.telegrambots.exceptions.TelegramApiRequestException;
 public class Bot extends TelegramLongPollingBot {
     Config config = new Config();
     TimeHelper timeHelper = new TimeHelper();
+
 
     public static void main(String[] args) {
         ApiContextInitializer.init();
@@ -44,6 +47,8 @@ public class Bot extends TelegramLongPollingBot {
     public void onUpdateReceived(Update update) {
         Message message = update.getMessage();
         JsonCurrencyParser jsonCurrencyParser = new JsonCurrencyParser();
+
+        //replace with switch-case
         if (message != null && message.hasText()) {
             if (message.getText().equals("/help")) {
                 sendNewMessage(message, "Hello, wats up");
@@ -52,7 +57,15 @@ public class Bot extends TelegramLongPollingBot {
             } else if (message.getText().equals("/time")) {
                 sendNewMessage(message, timeHelper.getTimeDate());
             } else if (message.getText().equals("/currency")) {
-                sendNewMessage(message, jsonCurrencyParser.getInfoFromJson());
+                sendNewMessage(message, jsonCurrencyParser.currencyRequest());
+            } else if (message.getText().equals("/alpha")) {
+                sendNewMessage(message, jsonCurrencyParser.getInfoFromJson(8));
+            } else if (message.getText().equals("/creditagricol")) {
+                sendNewMessage(message, jsonCurrencyParser.getInfoFromJson(35));
+            } else if (message.getText().equals("/privatebank")) {
+                sendNewMessage(message, jsonCurrencyParser.getInfoFromJson(63));
+            } else if (message.getText().equals("/ukrsibbank")) {
+                sendNewMessage(message, jsonCurrencyParser.getInfoFromJson(73));
             } else sendNewMessage(message, "I'am sinking, wait just a second");
         }
     }
