@@ -2,10 +2,8 @@ package com.telebot.smartbot;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.impl.conn.DefaultHttpClientConnectionOperator;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -16,7 +14,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.Map;
 
 /**
  * @author Gagauz Sergey
@@ -93,7 +90,7 @@ public class JsonCurrencyParser {
                                        String eurAsk, String eurBid) {
         String formattedUSDCurrency = "USD ask: " + usdAsk + " USD bid: " + usdBid + usdBid;
         String formattedEURCurrency = "EUR ask: " + eurAsk + " EUR bid: " + usdBid + eurBid;
-        String currencyResponse = title + ":"+"\n" + formattedUSDCurrency +"\n"+ formattedEURCurrency;
+        String currencyResponse = title + ":" + "\n" + formattedUSDCurrency + "\n" + formattedEURCurrency;
         titlesOfBanks();
         return currencyResponse;
     }
@@ -112,7 +109,7 @@ public class JsonCurrencyParser {
         String allBanksTitle = "";
         currencyChoice = new HashMap<String, String>();
         currencyChoice.put("Alpha Bank:", "/alpha");
-        currencyChoice.put("Credit Agricol Bank:", "/creditagricol");
+        currencyChoice.put("Credit Agricole Bank:", "/creditagricol");
         currencyChoice.put("Private Bank:", "/privatebank");
         currencyChoice.put("UkrSib Bank:", "/ukrsibbank");
 
