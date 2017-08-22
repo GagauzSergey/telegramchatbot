@@ -9,11 +9,11 @@ public class Config {
     private String botName;
 
     public String getBotToken() {
-        return "";
+        return "381128752:AAFOkq01lIiZrjbWUW_K0AgVslfVTPcRwik";
     }
 
     public void setBotToken(String botToken) {
-        this.botToken = "rockit_bot";
+        this.botToken ="";
     }
 
     public String getBotName() {
